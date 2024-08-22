@@ -13,7 +13,7 @@ select year(getdate()) as y,month(getdate()) as m,day(getdate()) as d;
 --5
 select datediff(year,'2002-06-22','2024-06-22') as diff;
 
---6 no
+--6 
 
 --10
 select * from employee;
