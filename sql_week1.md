@@ -71,7 +71,7 @@ group by category;
 ## 4. JOINS
 1. Write a query to join the Customers and Orders tables to display customer names and their order details.
 
-> since theres no customer table..i have created on and inserted values
+> since theres no customer table..i have created one and inserted values
 
 ```
 create table Customer(
