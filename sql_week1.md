@@ -1,4 +1,7 @@
 
+# WEEK 1 SQL ASSIGNMENT : : 
+
+## 1. DATE FUNCTIONS
 --2
 select datediff(month, '2002-06-22',getdate());
 
@@ -15,6 +18,7 @@ select datediff(year,'2002-06-22','2024-06-22') as diff;
 
 --6 
 
+## 2. STRING FUNCTIONS
 --10
 select * from employee;
 
@@ -32,6 +36,7 @@ select replace ( productname,'phone', 'device') as replaced from products;
 --14
 select charindex('e',name) as position from employee;
 
+## 3. AGGREGATE FUNCTIONS
 --17
 select * from orders;
 
@@ -54,6 +59,7 @@ select max(quantity) as maxi , min(quantity) as mini from orders;
 select category, sum(stockquantity) as total from products
 group by category;
 
+## 4. JOINS
 --24
 select * from tblPerson
 --25
@@ -83,6 +89,7 @@ join Employee e2 on
  e1.DepartmentId=e2.DepartmentId
 where e1.id<>e2.id;
 
+## 5. SUBQUERY
 --32
 select productname from products 
 where price > (
@@ -112,6 +119,7 @@ where salary > (select avg(salary) from employee)
 group by DepartmentId)
 ;
 
+## 6. GROUPING
 --40
 --customer
 
@@ -133,6 +141,8 @@ group by Category;
 
 --44
 --customer
+
+## 7. SET OPERATIONS
 
 --48
 --customer
