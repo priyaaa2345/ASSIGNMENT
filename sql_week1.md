@@ -38,12 +38,13 @@ WHERE orderdate >= DATEADD(DAY, -30, GETDATE());
 > select concat(productname, '-' , category) as word from products;
 
 4. Replace the word 'Phone' with 'Device' in all product names.
-Find the position of the letter 'a' in customer names.
+
 
 >select replace ( productname,'phone', 'device') as replaced from products;
 
---14
-select charindex('e',name) as position from employee;
+5. Find the position of the letter 'a' in customer names.
+
+>select charindex('e',name) as position from employee;
 
 ## 3. AGGREGATE FUNCTIONS
 1. Calculate the total sales amount for all orders.
@@ -64,7 +65,7 @@ group by month(orderdate);
 > select max(quantity) as maxi , min(quantity) as mini from orders;
 
 5. Calculate the sum of stock quantities grouped by product category.
-select * from products;
+
 >select category, sum(stockquantity) as total from products
 group by category;
 
@@ -99,12 +100,14 @@ left join orders on
 customer.orderid = orders.orderid;
 
 2. Perform an inner join between Products and Orders to retrieve product names and quantities sold.
+
 > select productname,quantity from products
 inner join orders on
 products.productid= orders.productid;
 
 
 3. Use a left join to display all products, including those that have not been ordered.
+
 >select distinct productname from products
 left join orders on
 products.ProductID=orders.ProductID;
@@ -115,8 +118,7 @@ products.ProductID=orders.ProductID;
 join Departments on 
 Employee.DepartmentId =Departments.id;
 
-5. 
-Perform a self-join on an Employees table to show pairs of employees who work in the same department.
+5. Perform a self-join on an Employees table to show pairs of employees who work in the same department.
 
 >select e1.name as empnam1 , e2.name as empname2 
 from employee e1
@@ -132,13 +134,13 @@ where e1.id<>e2.id;
 where price > (
 select avg(price) from products);
 
-2. 
-Retrieve customer names who have placed at least one order by using a subquery.
+2. Retrieve customer names who have placed at least one order by using a subquery.
 >select customername from customer
 where orderid in (select orderid from orders);
 
 
 3. Find the top 3 most expensive products using a subquery.
+
 >select productname,price from products 
 where price in (select price from products
 order by price desc
