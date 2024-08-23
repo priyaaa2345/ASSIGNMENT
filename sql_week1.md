@@ -44,7 +44,7 @@ WHERE orderdate >= DATEADD(DAY, -30, GETDATE());
 
 5. Find the position of the letter 'a' in customer names.
 
->select charindex('e',name) as position from employee;
+>select charindex('a',name) as position from employee;
 
 ## 3. AGGREGATE FUNCTIONS
 1. Calculate the total sales amount for all orders.
@@ -53,11 +53,11 @@ WHERE orderdate >= DATEADD(DAY, -30, GETDATE());
 
 2. Find the average price of products in each category.
 
-
 >select category,avg(price) from products
 group by category;
 
 3. Count the number of orders placed in each month of the year.
+
 >select month(orderdate) as monthss, count(orderid) as ordersInMonth from orders
 group by month(orderdate);
 
@@ -138,7 +138,6 @@ select avg(price) from products);
 >select customername from customer
 where orderid in (select orderid from orders);
 
-
 3. Find the top 3 most expensive products using a subquery.
 
 >select productname,price from products 
@@ -146,7 +145,6 @@ where price in (select price from products
 order by price desc
 offset 0 rows
 fetch next 3 rows only);
-
 
 4. Write a query to list all employees whose salary is higher than the average salary of their department.
 >select id,name,salary,DepartmentId from employee e
